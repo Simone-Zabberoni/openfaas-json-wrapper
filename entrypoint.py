@@ -64,5 +64,24 @@ except:
 """
 #-----------------------------------------------------
 
+## wc word counting - no input checking
+#
+# Expects input like:
+#    {
+#        "text": "some random text"
+#    }
+# Json couldn't be multiline, so only words and chars are meaningful
+
+"""
+import os
+(rows, words, chars) = os.popen('echo \"' + jsonInput['text']  + '\" | wc ').read().split()
+
+jsonOutput = { 'rows': rows, 
+    'words': words,
+    'chars': chars  }
+"""
+#-----------------------------------------------------
+
+
 ### Return json response
-print ( json.dumps(jsonOutput) )
+print ( json.dumps(jsonOutput, indent=4, separators=(',', ': ')) )
