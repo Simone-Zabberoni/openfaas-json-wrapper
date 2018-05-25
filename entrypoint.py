@@ -28,6 +28,7 @@ jsonOutput = jsonInput
 
 ## Extract only some fields from the input
 """
+data = []
 for item in jsonInput:
     data.append( { 'name': item['name'], 'username': item['username']  }  )
 jsonOutput = data
